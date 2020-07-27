@@ -1,6 +1,6 @@
 export default {
   PORT: 300,
-  SECRET: 'ATSSecretKey',
+  SECRET: '1234567890',
    local: {
     MONGO_DB_URI: 'mongodb://localhost:27017/blood'
   },
