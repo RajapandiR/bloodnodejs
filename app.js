@@ -7,7 +7,7 @@ import routers from './src/routers';
 import { DB, PORT } from './config';
 
 const app = express();
-// const port = process.env.PORT ||  3000
+// const PORT = process.env.PORT ||  3000
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,12 +15,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routers)
 
 mongoose.Promise = global.Promise;
-// mongoose.connect(DB, 
-// 	{
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex:true,
-//   });
+mongoose.connect(DB, 
+	{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true,
+  });
 // mongoose.connect(process.env.DB, {
 // 			useNewUrlParser: true,
 // 			useUnifiedTopology: true
