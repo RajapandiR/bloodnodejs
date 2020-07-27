@@ -15,12 +15,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routers)
 
 mongoose.Promise = global.Promise;
-mongoose.connect(DB, 
-	{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex:true,
-  });
+// mongoose.connect(DB, 
+// 	{
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex:true,
+//   });
 // mongoose.connect(process.env.DB, {
 // 			useNewUrlParser: true,
 // 			useUnifiedTopology: true
