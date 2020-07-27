@@ -20,6 +20,13 @@ mongoose.connect(config[NODE_ENV].MONGO_DB_URI,
     useUnifiedTopology: true,
     useCreateIndex:true,
   });
+const db = mongoose.connection;
+db.on('error', (err) => {
+  console.log(err);
+});
+db.once('open', () => {
+  console.log('Connection with database succeeded.');
+});
 
 // mongoose.connect(process.env.DB, {
 // 			useNewUrlParser: true,
