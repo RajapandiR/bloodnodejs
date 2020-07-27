@@ -4,7 +4,7 @@ import Token from '../models/token_model';
 import Role from '../models/role_model';
 import AuthSchema from '../schemas/auth_schema';
 import Jwt from '../utils/jwt';
-import JsonSchemaValidator from '../utils/jsonSchemaValidator';
+import JsonSchemaValidator from '../utils/jsonschemavalidator';
 import Bcrypt from 'bcryptjs';
 
 class AuthController {
