@@ -4,23 +4,24 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 
 import routers from './src/routers';
-import { DB, PORT } from './config';
+import config from './config/config';
 
 const app = express();
-// const PORT = process.env.PORT ||  3000
+const PORT = process.env.PORT ||  3000
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routers)
-
+const NODE_ENV = process.env.NODE_ENV || 'local';
 mongoose.Promise = global.Promise;
-// mongoose.connect(DB, 
-// 	{
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex:true,
-//   });
+mongoose.connect(config[NODE_ENV].DB, 
+	{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true,
+  });
+
 // mongoose.connect(process.env.DB, {
 // 			useNewUrlParser: true,
 // 			useUnifiedTopology: true

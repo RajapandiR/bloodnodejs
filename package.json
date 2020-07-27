@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "eval $(cat .env) nodemon -r esm",
     "start": "node index.js"
   },
   "keywords": [],
