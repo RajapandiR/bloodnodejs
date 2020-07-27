@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routers)
 const NODE_ENV = process.env.NODE_ENV || 'local';
 mongoose.Promise = global.Promise;
-mongoose.connect(config[NODE_ENV].DB, 
+mongoose.connect(config[NODE_ENV].MONGO_DB_URI, 
 	{
     useNewUrlParser: true,
     useUnifiedTopology: true,
