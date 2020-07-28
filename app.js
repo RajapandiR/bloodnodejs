@@ -16,8 +16,8 @@ app.use('/', routers)
 // mongoose.set('useCreateIndex', true);
 // mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
-// const NODE_ENV = process.env.NODE_ENV || 'local';
-mongoose.connect(config.MONGO_DB_URI,
+const NODE_ENV = process.env.NODE_ENV || 'local';
+mongoose.connect( process.env.MONGO_DB_URI || config.MONGO_DB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -29,7 +29,7 @@ db.on('error', (err) => {
   console.log(err);
 });
 db.once('open', () => {
-  console.log('Connection with database succeeded.');
+  console.log('Connect the Database');
 });
 
 // mongoose.connect(process.env.DB, {
