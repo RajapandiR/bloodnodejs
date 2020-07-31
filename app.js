@@ -7,7 +7,7 @@ import routers from './src/routers';
 import config from './config/config';
 
 const app = express();
-const PORT = process.env.PORT ||  3000
+const PORT = config.PORT ||  8000
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -17,7 +17,7 @@ app.use('/', routers)
 // mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
 const NODE_ENV = process.env.NODE_ENV || 'local';
-mongoose.connect( process.env.MONGODB_URI || config.MONGO_DB_URI,
+mongoose.connect(config[NODE_ENV].MONGO_DB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
