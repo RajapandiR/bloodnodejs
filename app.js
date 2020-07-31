@@ -17,7 +17,7 @@ app.use('/', routers)
 // mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
 const NODE_ENV = process.env.NODE_ENV || 'local';
-mongoose.connect(config[NODE_ENV].MONGODB_URI,
+mongoose.connect(process.env.MONGODB_URI || config.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
